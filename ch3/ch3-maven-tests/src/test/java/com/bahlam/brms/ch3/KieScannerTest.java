@@ -18,7 +18,7 @@ import org.junit.Test;
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieBuilder;
 import org.kie.api.builder.KieFileSystem;
-import org.kie.api.builder.KieScanner;
+//Simport org.kie.api.builder.KieScanner;
 import org.kie.api.builder.ReleaseId;
 import org.kie.api.builder.model.KieModuleModel;
 import org.kie.api.runtime.KieContainer;
@@ -97,7 +97,7 @@ public class KieScannerTest {
         //The KieContainer is wrapped by a KieScanner.
         //Note that we are neve starting the KieScanner because we want to control
         //when the upgrade process kicks in.
-        KieScanner scanner = ks.newKieScanner(kieContainer);
+        //SKieScanner scanner = ks.newKieScanner(kieContainer);
         
         //Create a KieSession from the KieContainer
         KieSession ksession = kieContainer.newKieSession();
