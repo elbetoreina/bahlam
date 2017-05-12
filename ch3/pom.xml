@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.bahlam.brms.training</groupId>
+  <artifactId>ch3</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>ch3</name>
+  <description>BRMS Book Chapter 3 Examples</description>
+  <modules>
+  	<module>ch3-classpath-tests</module>
+  	<module>ch3-kjar-simple-discounts</module>
+  	<module>ch3-kjar-premium-discounts</module>
+  	<module>ch3-kjar-parent</module>
+  	<module>ch3-model</module>
+  	<module>ch3-utils</module>
+  	<module>ch3-maven-tests</module>
+  </modules>
+</project>

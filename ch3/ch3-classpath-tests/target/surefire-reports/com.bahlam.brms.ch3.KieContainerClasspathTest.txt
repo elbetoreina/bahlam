@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.bahlam.brms.ch3.KieContainerClasspathTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.73 sec
