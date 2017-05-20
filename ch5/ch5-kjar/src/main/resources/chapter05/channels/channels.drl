@@ -1,0 +1,29 @@
+package chapter05.channels;
+
+import com.bahlam.brms.training.model.Customer;
+import com.bahlam.brms.training.model.Order;
+import com.bahlam.brms.training.model.OrderState;
+import com.bahlam.brms.training.model.SuspiciousOperation;
+import com.bahlam.brms.training.model.OrderService;
+
+
+global Double amountThreshold;
+global OrderService orderService;
+
+rule "Detect suspicious amount operations"
+when
+    $c: Customer()
+    Number( doubleValue > amountThreshold ) from accumulate (
+        Order ( state != OrderState.COMPLETED, $total: total) from orderService.getOrdersByCustomer($c.customerId),
+        sum($total)
+    )
+then
+    insert(new SuspiciousOperation($c, SuspiciousOperation.Type.SUSPICIOUS_AMOUNT));
+end
+
+rule "Send Suspicious Operation to Audit Channel"
+when
+    $so: SuspiciousOperation()
+then
+    channels["audit-channel"].send($so);
+end
