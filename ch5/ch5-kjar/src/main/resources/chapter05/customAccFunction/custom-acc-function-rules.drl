@@ -1,0 +1,18 @@
+package chapter05.customAccFunction;
+
+import com.bahlam.brms.training.model.Order;
+import com.bahlam.brms.training.util.ObjectHolder;
+
+import accumulate com.bahlam.brms.training.acc.BiggestOrderFunction biggestOrder
+
+global ObjectHolder biggestOrder;
+
+rule "Find Biggest Order"
+when
+    $bigO: Order() from accumulate (
+        $o: Order(),
+        biggestOrder($o)
+    )
+then
+    biggestOrder.setObject($bigO);
+end

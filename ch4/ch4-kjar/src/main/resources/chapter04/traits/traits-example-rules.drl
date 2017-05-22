@@ -1,3 +1,4 @@
+
 package chapter04.traits
 
 import com.bahlam.brms.training.model.OrderLine;

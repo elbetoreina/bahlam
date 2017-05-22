@@ -1,0 +1,17 @@
+package chapter05.functions;
+
+import com.bahlam.brms.training.model.Customer;
+
+global java.util.List globalList;
+
+function String formatCustomer(Customer c){
+    return String.format(
+                "[%s] %s", c.getCategory(), c.getName());
+}
+
+rule "Prepare Customers List"
+when
+    $c: Customer()
+then
+    globalList.add(formatCustomer($c));
+end
